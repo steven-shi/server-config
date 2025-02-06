@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# check user is root
+if [ "$(id -u)" -ne 0 ]; then
+    if ! command -v sudo &> /dev/null; then
+        apt-get update && apt-get install -y sudo
+    fi
+fi
+
 # zsh
-sudo apt update && sudo apt install zsh -y
+sudo apt update && sudo apt install git curl zsh -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 curl -fsSL https://raw.githubusercontent.com/steven-shi/server-config/main/.zshrc -o ~/.zshrc
