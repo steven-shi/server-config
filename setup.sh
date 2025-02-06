@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # zsh
-sudo apt update && sudo apt install git zsh -y
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt update && sudo apt install git zsh nodejs yarn -y
 
 curl -fsSL https://raw.githubusercontent.com/steven-shi/server-config/main/.zshrc -o ~/.zshrc
 
@@ -14,7 +13,7 @@ git clone https://github.com/mfaerevaag/wd.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom
 
 # ssh key
 mkdir -p ~/.ssh
-curl -fsSL https://raw.githubusercontent.com/username/repo/branch/id_rsa.pub -o ~/.ssh/authorized_keys
+curl -fsSL https://raw.githubusercontent.com/steven-shi/server-config/main/id_rsa.pub -o ~/.ssh/authorized_keys
 
 # nvim setup
 sudo apt update
@@ -40,4 +39,6 @@ EOF
 
 nvim +PlugInstall +qall
 
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)
