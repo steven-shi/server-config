@@ -3,12 +3,14 @@
 # zsh
 sudo apt update && sudo apt install git zsh nodejs yarn -y
 
-curl -fsSL https://raw.githubusercontent.com/steven-shi/server-config/main/.zshrc -o ~/.zshrc
 
+RUNZSH=no sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Zsh plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 git clone https://github.com/mfaerevaag/wd.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/wd
+
+curl -fsSL https://raw.githubusercontent.com/steven-shi/server-config/main/.zshrc -o ~/.zshrc
 
 
 # ssh key
@@ -40,5 +42,4 @@ EOF
 nvim +PlugInstall +qall
 
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)
