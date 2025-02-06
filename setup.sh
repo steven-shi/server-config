@@ -1,7 +1,8 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
 # zsh
-sudo apt update && sudo apt install git zsh nodejs yarn -y
+sudo apt update && sudo apt install git zsh tzdata nodejs yarn -y
 
 
 RUNZSH=no sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
