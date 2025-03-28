@@ -34,7 +34,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'elzr/vim-json'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()
